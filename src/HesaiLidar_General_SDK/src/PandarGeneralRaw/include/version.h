@@ -21,20 +21,22 @@
 #include <unistd.h>
 #include <string>
 
-#define VERSION "PandarGeneralROS_1.1.10"
+#define VERSION "PandarGeneralROS_1.1.15"
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-void printVersion() {
-    printf("       ///////////////////////////////////////////////////////////////\n"
-           "       //     PandarGeneralSDK version: %s      //\n" 
-           "       ///////////////////////////////////////////////////////////////\n",VERSION);
-}
+    void printVersion()
+    {
+        printf("       ///////////////////////////////////////////////////////////////\n"
+               "       //     PandarGeneralROS version: %s      //\n"
+               "       ///////////////////////////////////////////////////////////////\n",
+               VERSION);
+    }
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif  // VERSION_H_
-
+#endif // VERSION_H_

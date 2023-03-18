@@ -3,27 +3,27 @@
 # HesaiLidar_General_ROS
 
 ## About the project
-HesaiLidar_General_ROS project includes the ROS Driver for：  
-**PandarQT/Pandar64/Pandar40P/Pandar20A/Pandar20B/Pandar40M/PandarXT**  
-LiDAR sensor manufactured by Hesai Technology.  
+HesaiLidar_General_ROS project includes the ROS Driver for：
+**PandarQT/Pandar64/Pandar40P/Pandar20A/Pandar20B/Pandar40M/PandarXT**
+LiDAR sensor manufactured by Hesai Technology.
 
 Developed based on [HesaiLidar_General_SDK](https://github.com/HesaiTechnology/HesaiLidar_General_SDK), After launched, the project will monitor UDP packets from Lidar, parse data and publish point clouds frames into ROS2 under topic: ```/pandar```. It can also be used as an official demo showing how to work with HesaiLidar_General_SDK.
 
 ## Environment and Dependencies
-**System environment requirement: Linux + ROS2**  
+**System environment requirement: Linux + ROS2**
 
-　Recommanded:  
-　Ubuntu - with ROS2 dashing desktop-full installed or  
-  Check resources on http://ros.org for installation guide 
- 
-**Library Dependencies: libpcap-dev + libpcl-dev + libboost-dev**  
+　Recommanded:
+　Ubuntu - with ROS2 dashing desktop-full installed or
+  Check resources on http://ros.org for installation guide
+
+**Library Dependencies: libpcap-dev + libpcl-dev + libboost-dev**
 ```
 $sudo apt install libpcl-dev libpcap-dev  libboost-dev
 ```
 
 ## Download and Build
 
-**Download code**  
+**Download code**
 ```
 $ mkdir -p rosworkspace/src
 $ cd rosworkspace/src
@@ -36,7 +36,7 @@ $ source /opt/ros/dashing/setup.bash
 $ colcon build --symlink-install
 ```
 
-## Configuration 
+## Configuration
 ```
  $ gedit install/hesai_lidar/share/hesai_lidar/launch/hesai_lidar_launch.py
 ```
@@ -60,7 +60,7 @@ Make sure parameters above set to the same with Lidar setting
 |pcap_file |pcap file path|
 |lidar_correction_file |lidar correction file path|　
 
-Data source will be from pcap file once "pcap_file" not empty 
+Data source will be from pcap file once "pcap_file" not empty
 
 **Reciving data from rosbag: config data_type and publish_type,leave the pcap_file empty**
 
@@ -74,7 +74,7 @@ Data source will be from rosbag when "pcap_file" is set to empty and "data_type"
 Make sure the parameter "publish_type" is set to "points"
 Make sure the parameter "namespace" in file hesai_lidar.launch is same with the namespace in rosbag
 
-## Run 
+## Run
 
 1. Make sure current path in the `rosworkspace` directory
 
@@ -150,11 +150,11 @@ for PandarXTM
 |lidar_type |"PandarXTM"|
 |frame_id |"PandarXTM"|　
 
-$ ros2 launch hesai_lidar hesai_lidar_launch.py 
+$ ros2 launch hesai_lidar hesai_lidar_launch.py
 ```
-3. The driver will publish PointCloud messages to the topic `/hesai/pandar`  
-4. Open Rviz2 and add display by topic  
-5. Change fixed frame to frame_id to view published point clouds  
+3. The driver will publish PointCloud messages to the topic `/hesai/pandar`
+4. Open Rviz2 and add display by topic
+5. Change fixed frame to frame_id to view published point clouds
 
 
 ## Details of launch file parameters and utilities
